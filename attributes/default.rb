@@ -19,7 +19,7 @@
 #
 
 default['tftp']['username'] = "tftp"
-default['tftp']['directory'] = "/var/lib/tftpboot"
+default['tftp']['directory'] = "/tftpboot"
 default['tftp']['address'] = "0.0.0.0:69"
-default['tftp']['tftp_options'] = "--secure"
-default['tftp']['options'] = "-l -s #{node['tftp']['directory']}"
+default['tftp']['tftp_options'] = "-c -s"
+default['tftp']['options'] = "#{node['tftp']['tftp_options']} #{node['tftp']['directory']}"
